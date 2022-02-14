@@ -13,7 +13,7 @@ public class Consola {
 	private CalculadoraHamburguesas calculadora;
 	
 	
-	public void ejecutarAplicacion() throws FileNotFoundException, IOException {
+	public void ejecutarAplicacion() {
 		
 		boolean continuar = true;
 		while (continuar) {
@@ -39,11 +39,17 @@ public class Consola {
 
 	}
 	
-	private void ejecutarCargarArchivos() throws FileNotFoundException, IOException {
+	private void ejecutarCargarArchivos() {
 		
-		System.out.println("\n" + "Cargar los archivos" + "\n");
-		
-		calculadora = LoaderHamburguesas.cargarArchivo();
+		try {
+			System.out.println("\n" + "Cargar los archivos" + "\n");
+			
+			calculadora = LoaderHamburguesas.cargarArchivo();
+		}
+		catch(IOException e){
+			System.out.println("ERROR: hubo un problema leyendo el archivo.");
+			System.out.println(e.getMessage());
+		}
 		
 	}
 	
