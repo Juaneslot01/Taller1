@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import uniandes.dpoo.taller1.modelo.Bebidas;
 import uniandes.dpoo.taller1.modelo.Combo;
 import uniandes.dpoo.taller1.modelo.Ingrediente;
 import uniandes.dpoo.taller1.modelo.ProductoMenu;
@@ -76,6 +77,23 @@ public class LoaderHamburguesas {
 		}
 		dr.close();
 		
+		Map<String, Bebidas> bebidas = new HashMap<>();
+		
+		BufferedReader er = new BufferedReader(new FileReader("C:\\Users\\User\\git\\Taller1\\Taller1_Hamburguesas\\data\\ingredientes.txt"));
+		String linea4 = er.readLine();
+		while (linea4 != null) {
+			String[] partes = linea3.split(";");
+			String nombreB = partes[0];
+			String SPrecio = partes[1];
+			int precio = Integer.parseInt(SPrecio);
+			Bebidas LaBebida = bebidas.get(nombreB);
+			if(LaBebida == null) {
+				LaBebida = new Bebidas(nombreB,precio);
+				bebidas.put(nombreB, LaBebida);	
+			}
+			linea4 = er.readLine();
+		}
+		er.close();
 		CalculadoraHamburguesas calculadora = new CalculadoraHamburguesas(combos,arMenu,ingredientes);
 		return calculadora;
 		

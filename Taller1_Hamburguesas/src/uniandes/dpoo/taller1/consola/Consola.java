@@ -73,6 +73,7 @@ public class Consola {
 		
 		Consola consola = new Consola();
 		consola.ejecutarAplicacion();
+		
 	}
 	
 
