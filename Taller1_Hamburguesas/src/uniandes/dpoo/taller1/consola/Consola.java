@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Map;
 
+import uniandes.dpoo.taller1.modelo.Combo;
 import uniandes.dpoo.taller1.procesamiento.CalculadoraHamburguesas;
 import uniandes.dpoo.taller1.procesamiento.LoaderHamburguesas;
 
@@ -45,6 +47,7 @@ public class Consola {
 			System.out.println("\n" + "Cargar los archivos" + "\n");
 			
 			calculadora = LoaderHamburguesas.cargarArchivo();
+			System.out.println(calculadora);
 		}
 		catch(IOException e){
 			System.out.println("ERROR: hubo un problema leyendo el archivo.");

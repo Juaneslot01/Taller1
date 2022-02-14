@@ -19,7 +19,7 @@ public class LoaderHamburguesas {
 		
 		Map<String, Combo> combos = new HashMap<>();
 		
-		BufferedReader br = new BufferedReader(new FileReader("combos.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\User\\git\\Taller1\\Taller1_Hamburguesas\\data\\combos.txt"));
 		
 		String linea = br.readLine();
 		while (linea != null) {
@@ -42,7 +42,7 @@ public class LoaderHamburguesas {
 		
 		Map<String,ProductoMenu> arMenu = new HashMap<>();
 		
-		BufferedReader cr = new BufferedReader(new FileReader("menu.txt"));
+		BufferedReader cr = new BufferedReader(new FileReader("C:\\Users\\User\\git\\Taller1\\Taller1_Hamburguesas\\data\\menu.txt"));
 		String linea2 = cr.readLine();
 		while (linea2 != null) {
 			String[] partes = linea2.split(";");
@@ -60,7 +60,7 @@ public class LoaderHamburguesas {
 		
 		Map<String, Ingrediente> ingredientes = new HashMap<>();
 		
-		BufferedReader dr = new BufferedReader(new FileReader("ingredientes.txt"));
+		BufferedReader dr = new BufferedReader(new FileReader("C:\\Users\\User\\git\\Taller1\\Taller1_Hamburguesas\\data\\ingredientes.txt"));
 		String linea3 = dr.readLine();
 		while (linea3 != null) {
 			String[] partes = linea3.split(";");
