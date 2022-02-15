@@ -26,8 +26,8 @@ public class Consola {
 		boolean continuar = true;
 		while (continuar) {
 			try {
-				cargarInformacionRestaurante();
-				mostrarMenu();
+				
+				mostrarOpciones();
 				
 				int opcion_seleccionada = Integer.parseInt(input("Por favor seleccione una opcion"));
 				if (opcion_seleccionada == 1)
@@ -43,20 +43,35 @@ public class Consola {
 	}
 	
 
-
+	public void mostrarOpciones() {
+		System.out.println("Bienvenido");
+		System.out.println("_______________________________________\n");
+		System.out.println("1. Cargar información de los archivos");
+		System.out.println("2. Mostrar Menú");
+		System.out.println("3. Iniciar un nuevo pedido");
+		System.out.println("4. Agregar un elemento a un pedido");
+		System.out.println("5. Cerrar un pedido y guardar la factura");
+		System.out.println("6. Consultar un pedido dada su ID");
+		
+	}
 	
 	public void mostrarMenu() {
+		
 		
 		List<ProductoMenu> menu = calculadora.mostrarMenu();
 		
 		List<Ingrediente> ingrediente = calculadora.mostrarIngredientes();
 		
+		
 		List<Bebidas> bebidas = calculadora.mostrarBebidas();
+		
 		
 		List<Combo> combos = calculadora.mostrarCombos();
 		
 		
 		System.out.println("**********************************************");
+		
+		System.out.println("********* Menú Especial *********\n");
 		
 		for (int i =0; i<menu.size();i++) {
 			ProductoMenu productoM = menu.get(i);
@@ -66,7 +81,7 @@ public class Consola {
 		}
 		System.out.println("**********************************************");
 		
-		
+		System.out.println("********* Combos *********\n");
 		for (int j =0; j<combos.size();j++) {
 			Combo combito = combos.get(j);
 			String nombre = combito.getNombre();;
@@ -79,6 +94,8 @@ public class Consola {
 		}
 		System.out.println("**********************************************");
 		
+		System.out.println("********* Ingredientes *********\n");
+		
 		for (int k =0; k<ingrediente.size();k++) {
 			Ingrediente ingrediente1 = ingrediente.get(k);
 			String nombre = ingrediente1.getNombre();
@@ -87,6 +104,7 @@ public class Consola {
 		}
 		System.out.println("**********************************************");
 		
+		System.out.println("********* Bebidas *********\n");
 		
 		for (int l =0; l<bebidas.size();l++) {
 			Bebidas bebida = bebidas.get(l);
@@ -105,6 +123,7 @@ public class Consola {
 			System.out.println("\n" + "Cargar los archivos" + "\n");
 			
 			calculadora = LoaderHamburguesas.cargarArchivo();
+			System.out.println("****** Archivos cargados correctamente ******\n");
 		}
 		catch(IOException e){
 			System.out.println("ERROR: hubo un problema leyendo el archivo.");
