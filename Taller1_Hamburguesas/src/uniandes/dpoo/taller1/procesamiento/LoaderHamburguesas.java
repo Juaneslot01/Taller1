@@ -82,7 +82,7 @@ public class LoaderHamburguesas {
 		BufferedReader er = new BufferedReader(new FileReader("C:\\Users\\User\\git\\Taller1\\Taller1_Hamburguesas\\data\\ingredientes.txt"));
 		String linea4 = er.readLine();
 		while (linea4 != null) {
-			String[] partes = linea3.split(";");
+			String[] partes = linea4.split(";");
 			String nombreB = partes[0];
 			String SPrecio = partes[1];
 			int precio = Integer.parseInt(SPrecio);
@@ -94,7 +94,7 @@ public class LoaderHamburguesas {
 			linea4 = er.readLine();
 		}
 		er.close();
-		CalculadoraHamburguesas calculadora = new CalculadoraHamburguesas(combos,arMenu,ingredientes);
+		CalculadoraHamburguesas calculadora = new CalculadoraHamburguesas(combos,arMenu,ingredientes,bebidas);
 		return calculadora;
 		
 	}

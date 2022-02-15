@@ -1,6 +1,12 @@
 package uniandes.dpoo.taller1.modelo;
 
-public class Combo {
+import java.util.List;
+
+import uniandes.dpoo.taller1.procesamiento.CalculadoraHamburguesas;
+
+public class Combo implements Producto{
+	
+	private CalculadoraHamburguesas calculadora;
 	
 	private String nombre;
 	
@@ -20,12 +26,13 @@ public class Combo {
 		this.gaseosa = laGaseosa;		
 	}
 	
-	public String darNombre() {
-		return nombre;
-	}
 	
-	public String darDescuento() {
-		return descuento;
+	public Double darDescuento() {
+		
+		String[] x = descuento.split("%");
+		Double y = Double.parseDouble(x[0]);
+		Double z = y/100;
+		return z;
 	}
 	public String darHamburguesa() {
 		return hamburguesa;
@@ -33,8 +40,27 @@ public class Combo {
 	public String darPapas() {
 		return papas;
 	}
-	public String darGaseosa() {
+	public String darBebida() {
 		return gaseosa;
+	}
+
+	@Override
+	public int getPrecio() {
+		// TODO Auto-generated method stub
+		
+		return 0;
+	}
+
+	@Override
+	public String getNombre() {
+		// TODO Auto-generated method stub
+		return nombre;
+	}
+
+	@Override
+	public String generarTextoFactura() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
